@@ -76,7 +76,7 @@ function sendEmail(name,email,password)
         To: email,
         From: 'todoapplicationteam@gmail.com',
         Subject: "Registration Confirmation - TODO Application", 
-        Body: "<html><h2><b><font color='brown'>Hello "+name+", </font></h2><h3>Thankyou for Registering in TODO Application. Your User Email and Password is: </h3><p><h4>Registered email: <font color='red'> "+email+" </font></h4></p><p><h4>Password: <font color='red'> "+password+" </font></h4></p><h3> Hope you will have a great Expirience with me.</h3> <h3><font color='navy'>Thanks & regards,</font><br><font color='red'>- TODO Application</font><br></h3></b></html>", 
+        Body: "<html><h2><b><font color='brown'>Hello "+name+", </font></h2><h3>Thankyou for Registering in TODO Application. Your User Email and Password is: </h3><p><h4>Registered email: <font color='red'> "+email+" </font></h4></p><p><h4>Password: <font color='red'> "+password+" </font></h4></p><h3> Hope you will have a great Experience with me.</h3> <h3><font color='navy'>Thanks & regards,</font><br><font color='red'>- TODO Application</font><br></h3></b></html>", 
       })  
         .then(function (message) 
         { 
