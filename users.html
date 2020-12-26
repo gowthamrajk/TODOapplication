@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="shortout icon" type="image/x-icon" href="img/login-avatar.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Tangerine|Lato|Gamja+Flower|Open+Sans|Roboto+Slab|Indie+Flower|Lobster|Open+Sans|Kosugi+Maru">
+</head>
+<body onload="renderTime()">
+    <div class="my-container">
+        <h3>Welcome, <span id="username"></span></h3>
+        <h5>Lets start making the list</h5><br>
+        <h6><center><font color="white"><div id="clockDisplay" class="clockContainer">Date: 00:00:00</div></font></center></h6>
+        <button class="btn btn-danger btn-sm" onclick="logout()"><b>Logout</b></button>
+        <br><a class="btn btn-ternary btn-sm" href="putFeedback.html">
+            <i class="fas fa-comment-alt"></i> Feedback
+        </a>
+    </div><br>
+    <div class="model-container" id="model_container">
+        <div class="model">
+            <h4>Session Expired</h4><br>
+            <img src="img/session-expired.png" width="140" height="120"><br><br>
+            <button class="btn" id="close"><b>Close</b></button>
+        </div>
+    </div>
+    <div>
+        <input type="checkbox" class="checkbox" id="chk" />
+        <label class="label" for="chk">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+            <div class="ball"></div>
+        </label>
+    </div>
+    <div class="container">
+        <form autocomplete="off" class="form-group" id="form">
+            <input type="text" class="form-control" id="todos" required><br>
+            <button type="submit" class="btn btn-success btn-block">ADD <i class="fas fa-plus"></i></button>
+        </form>
+    </div><br>
+    <div class="container todo-container" id="todo-container">
+    </div>
+    <div class="social-panel-container" aria-labelledby="exampleModalLabel">
+    <div class="social-panel">
+        <p>Created by GowthamRaj K<i class="fa fa-heart"></i></p>
+        <button class="close-btn"><i class="fas fa-times"></i></button>
+        <h4>Get in touch on</h4>
+        <ul>
+            <li>
+                <a href="https://github.com/gowthamrajk" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/gowtham-kittusamy-54b835174/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.hackerrank.com/gowthamraj692" target="_blank">
+                    <i class="fab fa-hackerrank"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/gow_t_h_a_m_r_a_j/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=100017471417983" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<button class="floating-btn1" data-target="#exampleModal"><b>Any Help ?</b></button>
+<button class="floating-btn2" onclick="document.location='profilecard.html'"><b>Author Info</b></button>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+
+    <script>
+  var firebaseConfig = 
+  {
+    apiKey: "AIzaSyBKQqVLFcqgWdP9ThD45Rs5h9CEgDNgdz4",
+    authDomain: "todo-application-92050.firebaseapp.com",
+    projectId: "todo-application-92050",
+    storageBucket: "todo-application-92050.appspot.com",
+    messagingSenderId: "209909192103",
+    appId: "1:209909192103:web:cb42fefee83b0b1b799282",
+    measurementId: "G-79MVL5JYYG"
+  };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const fs = firebase.firestore();
+        const db = firebase.database();
+    </script>
+    <script src="js/users.js"></script>
+</body>
+</html>

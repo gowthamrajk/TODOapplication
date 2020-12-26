@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TODO Apllication</title>
+    <link rel="shortout icon" type="image/x-icon" href="img/landingpage.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Tangerine|Lato|Gamja+Flower|Open+Sans|Roboto+Slab|Indie+Flower|Lobster|Open+Sans|Kosugi+Maru">
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body onload="renderTime()">
+    <div class="my-container">
+        <center><h3>Welcome to <span> TODO APPLICATION</span></h3>
+        <h5>I am Your New Friend to List Your Tasks-of-the-Day</h5></center>
+        <br>
+        <h6><center><font color="white"><div id="clockDisplay" class="clockContainer">Date: 00:00:00</div></font></center></h6>
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-plus"></i> REGISTER
+        </button><br>
+        <a class="btn btn-secondary btn-sm" href="login.html">
+            <i class="fas fa-sign-in-alt"></i> LOGIN
+        </a>
+        </button><br>
+        <a class="btn btn-ternary btn-sm" href="putFeedback.html">
+            <i class="fas fa-comment-alt"></i> Feedback
+        </a>
+    </div>
+    <center><img src="img/list.gif" width="210px" height="200px"></center>
+    <div class="container">
+        <center><div class="error">If You are a New User, please REGISTER your account (or) if Already our Customer, please LOGIN</div></center>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><b>New User Registration</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="regbox box">
+                <img class="avatar" src="img/avatar.svg">
+                <h1>New User </h1>
+                <form autocomplete="off" class="form-group" action="#" id="signup-form">
+                   <p>Username</p>
+                   <input type="text" placeholder="name" class="form-control" id="name" required>
+                   <div class="inputbox">
+                   <p>Email Address</p>
+                   <input type="text" placeholder="email" name="email" id="email" onkeydown="validation()" required>
+                   <b><span id="subtext"></span></b>
+                   </div>
+                   <div class="input-container">
+                   <p>Password</p>
+                   <input type="password" placeholder="password" id="password" name="password" required>
+                   <span><i class="fa fa-eye" id="eye" onclick="toggle()"></i></span></div>
+                   <div class="instruction">Atleast 8 characters, one lowercase, uppercase, number, special character</div>
+                   <div id="strength">
+                        <span class="result"></span>
+                        <span class="str-box box1">
+                        <div></div>
+                        </span>
+                        <span class="str-box box2">
+                        <div></div>
+                        </span>
+                        <span class="str-box box3">
+                        <div></div>
+                        </span>
+                        <span class="str-box box4">
+                        <div></div>
+                        </span>     
+                    </div>
+                    <div class="intext"></div>
+                   <button type="submit" value="Sign Up"><b>Sign Up</b></button><br>
+                   <br><div class="text1"><a href='login.html'>Already a user?</a></div>
+                </form>
+             </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+<script>
+  var firebaseConfig = 
+  {
+    apiKey: "AIzaSyBKQqVLFcqgWdP9ThD45Rs5h9CEgDNgdz4",
+    authDomain: "todo-application-92050.firebaseapp.com",
+    projectId: "todo-application-92050",
+    storageBucket: "todo-application-92050.appspot.com",
+    messagingSenderId: "209909192103",
+    appId: "1:209909192103:web:cb42fefee83b0b1b799282",
+    measurementId: "G-79MVL5JYYG"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>
