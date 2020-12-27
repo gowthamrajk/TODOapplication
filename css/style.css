@@ -551,7 +551,7 @@ body.dark
     align-items: center;
     justify-content: space-between;
     padding: 5px;
-    position: absolute;
+    position: fixed;
     height: 10px;
     width: 35px;
     margin-left: 20px;
