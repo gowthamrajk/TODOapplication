@@ -539,7 +539,6 @@ body.dark
 .checkbox 
 {
     opacity: 0;
-    position: absolute;
 }
 
 .label 
@@ -551,7 +550,7 @@ body.dark
     align-items: center;
     justify-content: space-between;
     padding: 5px;
-    position: fixed;
+    position: absolute;
     height: 10px;
     width: 35px;
     margin-left: 20px;
