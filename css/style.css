@@ -554,8 +554,8 @@ body.dark
     position: absolute;
     height: 10px;
     width: 35px;
-    margin-left: 20px;
-    margin-top: -70px;
+    margin-left: -160px;
+    margin-top: -20px;
     transform: scale(1.5);
 }
 
