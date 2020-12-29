@@ -39,10 +39,6 @@ renderTime();
 var flag=0;
 const signupForm = document.getElementById("signup-form");
 signupForm.addEventListener('submit', e => {
-    if(flag==0)
-    {
-        location = "register-error2.html";
-    }
     e.preventDefault();
     const name = signupForm['name'].value;
     const email = signupForm['email'].value;
