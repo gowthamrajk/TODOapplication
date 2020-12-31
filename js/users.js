@@ -152,7 +152,6 @@ auth.onAuthStateChanged(user => {
     }
 })
 
-//floating pannel
 const floating_btn = document.querySelector('.floating-btn1');
 const close_btn = document.querySelector('.close-btn');
 const social_panel_container = document.querySelector('.social-panel-container');
@@ -165,14 +164,12 @@ close_btn.addEventListener('click', () => {
     social_panel_container.classList.remove('visible')
 });
 
-//dark mode
 const chk = document.getElementById('chk');
 
 chk.addEventListener('change', () => {
     document.body.classList.toggle('dark');
 });
 
-//logout result
 const model_container = document.getElementById("model_container");
 function showAlertBox()
 {
