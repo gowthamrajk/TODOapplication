@@ -86,7 +86,6 @@ function redirect()
     location = "register-success.html";
 }
 
-//validate email
 function validation()
 {
     var form = document.getElementById("signup-form");
@@ -117,8 +116,6 @@ function validation()
         text.style.color = "#00ff00";
     }
 }
-
-//toogle password
 var state= false;
 function toggle()
 {
@@ -136,7 +133,6 @@ function toggle()
     }
 }
 
-//password validation
 var result = $("#strength");
     $('#password').keyup(function(){
         $(".result").html(checkStrength($('#password').val()))
