@@ -11,7 +11,6 @@ loginForm.addEventListener('submit', e => {
     })
 })
 
-//validate email
 function validation()
 {
     var form = document.getElementById("login-form");
@@ -41,7 +40,6 @@ function validation()
     }
 }
 
-//toogle password
 var state= false;
 function toggle()
 {
@@ -59,7 +57,6 @@ function toggle()
     }
 }
 
-//password validation
 var result = $("#strength");
     $('#login-password').keyup(function(){
         $(".result").html(checkStrength($('#login-password').val()))
