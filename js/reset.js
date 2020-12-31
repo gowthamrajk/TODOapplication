@@ -18,7 +18,6 @@ function change()
     text.style.color = "lime";
 }
 
-//validate email
 function validation()
 {
     var form = document.getElementById("login-form");
